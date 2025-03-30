@@ -8,10 +8,13 @@ def test_password_characters():
     for char in password:
         assert char in valid_characters
 
-"""
-Допиши еще один тест из предложенных. Или придумай свой.
-Если сможешь написать больше, то будет круто!
+def test_password_length():
+    """Тест, проверяющий длину пароля."""
+    lengths = [5, 20, 32, 42, 21]
+    for length in lengths:
+        assert len(generate_password(length)) == length
 
-Тест, что длина пароля соответствует заданной
-Тест, что два сгенерированных подряд пароля различаются
-"""
+def test_password_uniq():
+    """Тест, проверяющий уникальность паролей."""
+    assert generate_password(100) != generate_password(100) 
+        

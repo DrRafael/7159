@@ -1,5 +1,6 @@
 import string
 from password.new_password import generate_password
+from calculate.calculator_program import calculate
 
 def test_password_characters():
     """Тест, что при генерации используются только допустимые символы"""
@@ -8,6 +9,9 @@ def test_password_characters():
     for char in password:
         assert char in valid_characters
 
+
+def test_calculate_addition():
+    assert calculate(1, -1, '+') == 0
 """
 Допиши еще один тест из предложенных. Или придумай свой.
 Если сможешь написать больше, то будет круто!
